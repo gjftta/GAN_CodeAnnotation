@@ -1,0 +1,25 @@
+DEVICE: [0,1]
+EMB_SIZE: 512
+NHEAD: 8
+FFN_HID_DIM: 512
+NUM_ENCODER_LAYERS: 3
+NUM_DECODER_LAYERS: 3
+train:
+  data_path: '/data/junyitian/CodeSearchNet/dataset/java/train_clean.jsonl'
+  code_max_length: 200
+  docs_max_length: 50
+  shuffle: False
+  batch_size: 64
+  num_epoch: 200
+  lossMIN: None
+  logdir: 'log/generator_test'
+  checkpoint: 'checkpoint/generator_test'
+  output_path: 'sample/train'
+  sample_logdir: 'log/sample'
+valid:
+  data_path: '/data/junyitian/CodeSearchNet/dataset/java/valid_clean.jsonl'
+  code_max_length: 200
+  docs_max_length: 30
+  shuffle: False
+  batch_size: 64
+  output_path: 'sample/valid'

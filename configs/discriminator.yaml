@@ -1,0 +1,27 @@
+DEVICE: 3
+EMB_SIZE: 512
+train:
+  data_path: '/data/junyitian/CodeSearchNet/dataset/java/train_clean.jsonl'
+  pos_sample_path: '/data/junyitian/CodeSearchNet/dataset/java/train_clean.jsonl'
+  neg_sample_dir: 'sample/train'
+  neg_sample_path: 'sample/train/generated_sample.jsonl'
+  logdir: 'log/discriminator'
+  checkpoint: 'checkpoint/discriminator'
+  code_max_length: 200
+  docs_max_length: 30
+  shuffle: False
+  lossMIN: None
+  batch_size: 128
+  num_epoch: 2
+  filter_sizes: [1, 2, 4, 6, 8, 9, 10, 15, 20]
+  num_filters: [100, 200, 200, 100, 100, 100, 100, 160, 160]
+  dropout_rate: 0.2
+valid:
+  data_path: '/data/junyitian/CodeSearchNet/dataset/java/valid_clean.jsonl'
+  pos_sample_path: '/data/junyitian/CodeSearchNet/dataset/java/valid_clean.jsonl'
+  neg_sample_dir: 'sample/valid'
+  neg_sample_path: 'sample/valid/generated_sample.jsonl'
+  code_max_length: 200
+  docs_max_length: 30
+  shuffle: False
+  batch_size: 128

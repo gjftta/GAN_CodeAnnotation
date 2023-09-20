@@ -1,0 +1,20 @@
+DEVICE: [0,3]
+EMB_SIZE: 512
+train:
+  data_path: '/data/junyitian/CodeSearchNet/dataset/java/train_clean.jsonl'
+  # data_path: '/data/junyitian/CodeSearchNet/dataset/java/test_clean.jsonl'
+  checkpoint: 'checkpoint/gan_part'
+  code_max_length: 200
+  docs_max_length: 30
+  batch_size: 64
+  shuffle: False
+  logdir: 'log/gan_rand'
+  num_epoch: 100
+  rollout_num: 8
+  lossMIN: None
+valid:
+  data_path: '/data/junyitian/CodeSearchNet/dataset/java/valid_clean.jsonl'
+  code_max_length: 200
+  docs_max_length: 30
+  shuffle: False
+  batch_size: 64
